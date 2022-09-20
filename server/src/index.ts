@@ -23,9 +23,17 @@ app.post("/users", async (req, res) => {
   res.send(user);
 });
 
-app.delete("/users", async (req, res) => {});
+app.delete("/users", async (req, res) => {
+  await User.delete(req.body.id)
+  res.send("user deleted")
+});
 
-app.put("/users", async (req, res) => {});
+app.put("/users", async (req, res) => {
+  await User.update(req.body.id,{
+    Name:req.body.name,
+    age:req.body.age
+  })
+});
 
 AppDataSource.initialize()
   .then(() => {
