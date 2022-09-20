@@ -1,7 +1,9 @@
 import express from "express"
 import { AppDataSource } from "./database/datasource"
 import { User } from "./database/manga"
+import cors from "cors"
 const app = express()
+app.use(cors())
 app.use(express.json())
 
 
