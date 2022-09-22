@@ -24,8 +24,8 @@ function put() {
   fetch("http://localhost:3000/users", {
     method: "PUT",
     body: JSON.stringify({
-      id: 1,
-      name: "samir",
+      id: 4,
+      name: "mohamed",
       age: 34,
     }),
     headers: {
@@ -39,7 +39,7 @@ function delete1() {
   fetch("http://localhost:3000/users", {
     method: "DELETE",
     body: JSON.stringify({
-      id: 3,
+      id: 1,
     }),
     headers: {
       "Content-Type": "application/json",
