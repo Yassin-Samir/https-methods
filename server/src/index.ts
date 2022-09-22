@@ -33,6 +33,7 @@ app.put("/users", async (req, res) => {
     Name:req.body.name,
     age:req.body.age
   })
+  res.send("user updated")
 });
 
 AppDataSource.initialize()
