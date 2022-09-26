@@ -13,7 +13,7 @@ app.get("/users", async (req, res) => {
 
 app.post("/users", async (req, res) => {
   console.log(req);
-  let { name, age } = req.body
+  let { name, age } = req.body;
   let user = new User();
   user.Name = name;
   user.age = age;
@@ -24,16 +24,16 @@ app.post("/users", async (req, res) => {
 });
 
 app.delete("/users", async (req, res) => {
-  await User.delete(req.body.id)
-  res.send("user deleted")
+  await User.delete(req.body.id);
+  res.send("user deleted");
 });
 
 app.put("/users", async (req, res) => {
-  await User.update(req.body.id,{
-    Name:req.body.name,
-    age:req.body.age
-  })
-  res.send("user updated")
+  await User.update(req.body.id, {
+    Name: req.body.name,
+    age: req.body.age,
+  });
+  res.send("user updated");
 });
 
 AppDataSource.initialize()

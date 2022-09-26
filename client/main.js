@@ -21,11 +21,13 @@ async function post() {
 document.querySelector(".post").addEventListener("click", post);
 
 function put() {
+  const input = +prompt("", "");
+  const input1 = prompt("", "");
   fetch("http://localhost:3000/users", {
     method: "PUT",
     body: JSON.stringify({
-      id: 4,
-      name: "mohamed",
+      id: input,
+      name: input1,
       age: 34,
     }),
     headers: {
@@ -36,10 +38,11 @@ function put() {
 document.querySelector(".put").addEventListener("click", put);
 
 function delete1() {
+  const input = +prompt("", "");
   fetch("http://localhost:3000/users", {
     method: "DELETE",
     body: JSON.stringify({
-      id: 1,
+      id: input,
     }),
     headers: {
       "Content-Type": "application/json",
